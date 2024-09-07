@@ -67,7 +67,7 @@ var option1 = document.getElementById("option1");
 var option2 = document.getElementById("option2");
 var option3 = document.getElementById("option3");
 var option4 = document.getElementById("option4");
-var score = document.getElementById('score')
+var score = document.getElementById("score");
 console.log(score);
 
 var options = [option1, option2, option3, option4];
@@ -80,24 +80,22 @@ function enablebtn() {
   var btn = document.getElementById("next-btn");
   btn.disabled = false;
 }
-var scores =0;
+var scores = 0;
 function nextQuestion() {
   var answers = document.getElementsByName("answer");
-  for (var i = 0; i < answers.length; i++){
-    if(answers[i].checked){
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
       console.log(answers[i].value);
       console.log(questions[i].correctAnswer);
-      
-      
-      if(Number(answers[i].value)===questions[index-1].correctAnswer){
-         scores++;
-         console.log(scores);
-     
-         score.innerHTML=`Score ${scores}`;
+
+      if (Number(answers[i].value) === questions[index - 1].correctAnswer) {
+        scores++;
+        console.log(scores);
+
+        score.innerHTML = `Score ${scores}`;
       }
     }
     answers[i].checked = false;
-    
   }
   var btn = document.getElementById("next-btn");
   btn.disabled = true;
@@ -108,7 +106,6 @@ function nextQuestion() {
       //   options[option1].innerHTML += questions[index].choices[i];
       // console.log(options[i]);
       options[i].innerHTML = choices[i];
-      
     }
   } else {
     console.log("End of Quiz");
