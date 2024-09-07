@@ -89,11 +89,11 @@ function nextQuestion() {
       console.log(questions[i].correctAnswer);
       
       
-      if(Number(answers[i].value)===questions[i].correctAnswer){
+      if(Number(answers[i].value)===questions[index-1].correctAnswer){
          scores++;
          console.log(scores);
      
-        //  score.innerHTML=`Score ${scores}`;
+         score.innerHTML=`Score ${scores}`;
       }
     }
     answers[i].checked = false;
