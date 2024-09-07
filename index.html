@@ -3,25 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Interactive Quiz Game</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main">
-      <h1>Question Area</h1>
-      <hr />
+    <div class="quiz-container">
+      <h1>Quiz Game</h1>
       <div id="question-container">
         <p id="question">Question text will go here</p>
         <div class="answer-buttons">
-            <button class="btn answer-btn">Answer 1</button>
-            <button class="btn answer-btn">Answer 2</button>
-            <button class="btn answer-btn">Answer 3</button>
-            <button class="btn answer-btn">Answer 4</button>
+          <div class="label">
+            <label >
+              <input onclick="enablebtn()" value="0" type="radio" name="answer" id="" />
+              <span id="option1"></span>
+            </label>
+          </div>
+          <div class="label">
+            <label>
+              <input onclick="enablebtn()" value="1" type="radio" name="answer" id="" />
+              <span  id="option2"></span>
+            </label>
+          </div>
+          <div class="label">
+            <label >
+              <input onclick="enablebtn()" value="2" type="radio" name="answer" id="" />
+              <span id="option3"></span>
+            </label>
+          </div>
+          <div class="label">
+            <label >
+              <input onclick="enablebtn()" value="3" type="radio" name="answer" id="" />
+              <span id="option4"></span>
+            </label>
+          </div>
         </div>
+      </div>
+      <p id="score">Score: 0</p>
+      <button id="next-btn" onclick="nextQuestion()" disabled >Next Question</button>
+      <button id="restart-btn" class="btn restart-btn" style="display: none">
+        Play Again
+      </button>
     </div>
-    <p id="score">Score: 0</p>
-    <button id="next-btn" class="btn next-btn">Next Question</button>
-    <button id="restart-btn" class="btn restart-btn" style="display:none;">Play Again</button>
-    </div>
+    <script src="app.js"></script>
   </body>
 </html>
